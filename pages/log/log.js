@@ -1,12 +1,13 @@
 // pages/log/log.js
-
+const IMAGEUTILS = require('../../utils/image.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    imageWidth: 0,
+    imageHeight: 0
   },
 
   /**
@@ -24,14 +25,21 @@ Page({
         'content-type': 'application/json;charset=utf-8' // 默认值 
       },
       success(res) {
+        console.log(res, '123')
         that.setData({
-          banners: res.result
+          banners: res.data.result.list
         })
         console.log(res, "67ffty")
       }
     })
   },
-
+  autoFix: function(e) {
+   let imageSize =  IMAGEUTILS.imageUtil(e.detail.width, 200);
+    this.setData({
+      imageHeight: imageSize.imageHeight,
+      imageWidth: imageSize.imageWidth
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
