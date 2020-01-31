@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
@@ -10,4 +11,13 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}} {{userInfo.nickName}}</text>
   </view>
+=======
+<!--pages/log/log.wxml-->
+<view >
+  <swiper class="swiper" autoplay indicator-dots="true" indicator-active-color="#fff" circular>
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image style="width: {{imageWidth}}px height: {{imageHeight}}px"  bindload="autoFix" src="{{item.pictureUrl}}"> </image>
+    </swiper-item>
+  </swiper>
+>>>>>>> bbbb5b6a15882800132d1ee1be2185613c4a1b03
 </view>

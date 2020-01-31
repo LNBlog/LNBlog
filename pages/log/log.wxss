@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**index.wxss**/
 .userinfo {
   display: flex;
@@ -18,4 +19,18 @@
 
 .usermotto {
   margin-top: 200px;
+=======
+/* pages/log/log.wxss */
+.details{
+  width: 100px;
+  text-align: center;
+  position: absolute;
+  left:50%;
+  margin-left: -50px;
+  line-height: 50px;
+}
+.swiper {
+  width: 100%;
+  height: 200px
+>>>>>>> bbbb5b6a15882800132d1ee1be2185613c4a1b03
 }
