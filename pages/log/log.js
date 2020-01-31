@@ -1,15 +1,14 @@
-<<<<<<< HEAD
+
 //index.js
 //获取应用实例
 const app = getApp()
 
-=======
+
 // pages/log/log.js
 const IMAGEUTILS = require('../../utils/image.js');
->>>>>>> bbbb5b6a15882800132d1ee1be2185613c4a1b03
+
 Page({
   data: {
-<<<<<<< HEAD
     motto: 'hello',
     userInfo: {},
     hasUserInfo: false,
@@ -20,23 +19,6 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-=======
-    imageWidth: 0,
-    imageHeight: 0
   },
 
   /**
@@ -57,21 +39,9 @@ Page({
         console.log(res, '123')
         that.setData({
           banners: res.data.result.list
->>>>>>> bbbb5b6a15882800132d1ee1be2185613c4a1b03
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -80,8 +50,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-<<<<<<< HEAD
-=======
   },
   autoFix: function(e) {
    let imageSize =  IMAGEUTILS.imageUtil(e.detail.width, 200);
@@ -154,7 +122,5 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
->>>>>>> bbbb5b6a15882800132d1ee1be2185613c4a1b03
   }
 })
