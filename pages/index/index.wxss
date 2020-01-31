@@ -1,21 +1,19 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/log/log.wxss */
+.details{
+  width: 100px;
+  text-align: center;
+  position: absolute;
+  left:50%;
+  margin-left: -50px;
+  line-height: 50px;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.news{
+  width:90%;
+  padding: 5%;
+  height: auto;
 }
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.newsfor{
+  margin: 20px 0;
+  background-color: #eee;
+  font-size: 12px;
 }

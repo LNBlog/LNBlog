@@ -1,9 +1,13 @@
-<!--pages/log/log.wxml-->
-<view>
-  <text class="details">我的详情页</text>
-  <swiper autoplay indicator-dots="true" indicator-active-color="#674534">
-    <swiper-item wx:for="{{banners.list}}" wx:key="id">
-      <image src="{{item.list.pictureUrl}}"> </image>
-    </swiper-item>
-  </swiper>
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}} {{userInfo.nickName}}</text>
+  </view>
 </view>

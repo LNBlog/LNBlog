@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/log/log"
+    "pages/log/log",
+    "pages/pictures/pictures",
+    "pages/selfdata/selfdata"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,13 +15,25 @@
     "color": "#6e6d6b",
     "selectedColor": "#e64340",
     "borderStyle": "white",
-    "backgroundColor": "#ffb",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/images/nav/home-off.png",
         "selectedIconPath": "images/images/nav/home-on.png"
+      },
+      {
+        "pagePath": "pages/pictures/pictures",
+        "text": "图片库",
+        "iconPath": "images/images/nav/cart-off.png",
+        "selectedIconPath": "images/images/nav/cart-on.png"
+      },
+      {
+        "pagePath": "pages/selfdata/selfdata",
+        "text": "个人数据",
+        "iconPath": "images/images/nav/order-off.png",
+        "selectedIconPath": "images/images/nav/order-on.png"
       },
       {
         "pagePath": "pages/log/log",
