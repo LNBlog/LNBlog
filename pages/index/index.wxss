@@ -12,8 +12,15 @@
   padding: 5%;
   height: auto;
 }
-.newsfor{
-  margin: 20px 0;
+.newsbox{
   background-color: #eee;
   font-size: 12px;
+  position: relative;
 }
+.newsfor{
+  margin: 20px 0;
+}
+
+.formatTime{
+  text-align: right;
+} 

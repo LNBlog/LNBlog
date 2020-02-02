@@ -65,24 +65,6 @@ Page({
     
   },
 
-  // banners: function () {
-  //   wx.request({
-  //     url: 'http://139.224.25.165:8066/api/getPictureList',
-  //     data: {
-  //       pageNum: 1,
-  //       pageSize: 6
-  //     },
-  //     header: {
-  //       'content-type': 'application/json;charset=utf-8' // 默认值 
-  //     },
-  //     success(res) {
-  //       this.setData({
-  //         banners: res.result.list
-  //       })
-  //       console.log(res, "67ffty")
-  //     }
-  //   })
-  // },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -12,7 +12,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // /api/getPlayersSeasonData?playersId=825
 
+    const that = this;
+    wx.request({
+      url: 'http://139.224.25.165:8066/api/getPlayersSeasonData',
+      data: {
+        playersId: 825
+      },
+      header: {
+        'content-type': 'application/json;charset=utf-8' // 默认值 
+      },
+      success(res) {
+        console.log(res, '123sjdksh')
+        that.setData({
+          selfdata: res.data.result.list
+        })
+      }
+    })
   },
 
   /**

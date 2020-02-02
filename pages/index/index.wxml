@@ -6,9 +6,10 @@
     </swiper-item>
   </swiper>
   <view class="news">
-    <view wx:for="{{news}}" wx:key="id">
-      <view class="newsfor">"{{item.newsTitle}}"</view>
-      <view>"{{createTime}}"</view>
+  <!-- <van-button type="primary">按钮</van-button> -->
+    <view wx:for="{{news}}" wx:key="id" class="newsbox">
+      <view class="newsfor">{{item.newsTitle}}</view>
+      <view class="formatTime">{{formatTime}}</view>
     </view>
   </view>
 </view>

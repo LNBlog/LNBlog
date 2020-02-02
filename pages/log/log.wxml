@@ -5,5 +5,4 @@
       <image style="width: {{imageWidth}}px height: {{imageHeight}}px"  bindload="autoFix" src="{{item.pictureUrl}}"> </image>
     </swiper-item>
   </swiper>
-
 </view>

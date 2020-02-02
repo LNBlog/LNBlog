@@ -1,2 +1,4 @@
 <!--pages/pictures/pictures.wxml-->
-<text>pages/pictures/pictures.wxml</text>
+<view wx:for="{{pictures}}" wx:key="id">
+  <image src="{{item.pictureUrl}}"  data-id="{{item.pictureId}}"></image>
+</view>

@@ -12,7 +12,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // /api/getPictureList?pageNum=1&pageSize=3
+    const that = this;
+    wx.request({
+      url: 'http://139.224.25.165:8066/api/getPictureList',
+      data: {
+        pageNum: 1,
+        pageSize: 6
+      },
+      header: {
+        'content-type': 'application/json;charset=utf-8' // 默认值 
+      },
+      success(res) {
+        console.log(res, '123sjdksh')
+        that.setData({
+          pictures: res.data.result.list
+        })
+      }
+    })
   },
 
   /**
