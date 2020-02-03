@@ -1,7 +1,9 @@
 
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const get = require('./../../utils/request.js');
+const api = require('./../../utils/api.js')
 
 
 // pages/log/log.js
@@ -26,22 +28,12 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    wx.request({
-      url: 'http://139.224.25.165:8066/api/getPictureList',
-      data: {
-        pageNum: 1,
-        pageSize: 6
-      },
-      header: {
-        'content-type': 'application/json;charset=utf-8' // 默认值 
-      },
-      success(res) {
-        console.log(res, '123')
+    get.GET(api.API_getPictureList, { pageNum: 1, pageSize: 6})
+      .then(res => {
         that.setData({
           banners: res.data.result.list
         })
-      }
-    })
+      })
   },
   getUserInfo: function(e) {
     console.log(e)

@@ -1,7 +1,7 @@
 // pages/log/log.js
-const formatTime = require('../../utils/util.js');
-const get = require('./../../utils/request.js')
-
+import formatTime from "./../../utils/util.js";
+const get = require("./../../utils/request.js");
+const api = require('./../../utils/api.js');
 Page({
 
   /**
@@ -16,28 +16,19 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    wx.request({
-      url: 'http://139.224.25.165:8066/api/getPictureList',
-      data: {
-        pageNum: 1,
-        pageSize: 6
-      },
-      header: {
-        'content-type': 'application/json;charset=utf-8' // 默认值 
-      },
-      success(res) {
+    get.GET(api.API_getPictureList, { pageNum: 1, pageSize: 6})
+      .then( res => {
         that.setData({
           banners: res.data.result.list
         })
-      }
-    }),
+      })
 
-    get.GET('api/getNewsList', { pageNum: 1, pageSize: 6})
+    get.GET(api.API_getNewsList, { pageNum: 1, pageSize: 6})
       .then(res => {
         const time = new Date(res.data.result[0].createTime);
         that.setData({
           news: res.data.result,
-          formatTime: formatTime.formatTime(time)
+          createTime: formatTime.formatTime(time)
         })
       })
   },

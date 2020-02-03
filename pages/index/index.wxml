@@ -9,7 +9,7 @@
   <!-- <van-button type="primary">按钮</van-button> -->
     <view wx:for="{{news}}" wx:key="id" class="newsbox">
       <view class="newsfor">{{item.newsTitle}}</view>
-      <view class="formatTime">{{formatTime}}</view>
+      <view class="formatTime">{{createTime}}</view>
     </view>
   </view>
 </view>
