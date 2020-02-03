@@ -11,5 +11,6 @@
       <view class="newsfor">{{item.newsTitle}}</view>
       <view class="formatTime">{{createTime}}</view>
     </view>
+     <mp-loading type="circle" show="{{show}}"></mp-loading>
   </view>
 </view>

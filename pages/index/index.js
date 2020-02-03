@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    show: false
   },
  
   /**
@@ -16,16 +16,9 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    get.GET(api.API_getPictureList, { pageNum: 1, pageSize: 6})
-      .then( res => {
-        console.log(res, "hgfd");
-        that.setData({
-          banners: res.data.result.list
-        })
-      })
-
-    get.GET(api.API_getNewsList, { pageNum: 1, pageSize: 6})
+    get.GET(api.API_getNewsList, { pageNum: 1, pageSize: 4})
       .then(res => {
+        console.log(22222222)
         const time = new Date(res.data.result[0].createTime);
         that.setData({
           news: res.data.result,
@@ -73,7 +66,19 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      show: true,
+    })
+    const that = this;
+    get.GET(api.API_getNewsList, { pageNum: 1, pageSize: 6 })
+      .then(res => {
+        const time = new Date(res.data.result[0].createTime);
+        that.setData({
+          show: false,
+          news: res.data.result,
+          createTime: formatTime.formatTime(time)
+        })
+      })
   },
 
   /**
