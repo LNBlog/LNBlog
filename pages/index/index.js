@@ -18,6 +18,7 @@ Page({
     const that = this;
     get.GET(api.API_getPictureList, { pageNum: 1, pageSize: 6})
       .then( res => {
+        console.log(res, "hgfd");
         that.setData({
           banners: res.data.result.list
         })
